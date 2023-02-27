@@ -15,6 +15,7 @@ const BuscaPorCep = () => {
       .get(`http://viacep.com.br/ws/${cep}/json/`)
       .then((response) => {
         setData([response.data]);
+        console.log(response.data.length())
       })
       .catch((error) => {
         console.error;
@@ -22,8 +23,8 @@ const BuscaPorCep = () => {
   }, [cep]);
   console.log(data)
   return (
-    <View>
-      <Text>Vamos buscar o Endereço</Text>
+    <View style={styles.container}>
+      <Text style={styles.textStyle} >Vamos buscar o Endereço</Text>
       <TextInput
         style={styles.textImput}
         placeholder="Digite o CEP"
@@ -34,19 +35,38 @@ const BuscaPorCep = () => {
         data={data}
         renderItem={({ item }) => <ListaCep item={item} />}
         keyExtractor={(item, index) => index.toString()}
+        style={styles.dataList}
       />     
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container : {
+    alignItems: "center",
+  },
   textImput: {
     margin: 20,
-    padding: 2,
-    borderColor: "#f3f4",
-    borderWidth: 2,
+    padding: 10,
+    borderColor: "#ff8001",
+    borderWidth: 3,
+    borderRadius: 10,
     height: 50,
     width: 300,
+    
+  },  
+  textStyle: {
+    textAlign: "center",
+    fontFamily: "Roboto",
+    fontSize: 14,
   },
+  dataList: {
+    textAlign:"left",
+    borderWidth: 1,
+    margin: 2,
+    width: 300,
+    maxHeight: 200,
+    minHeight: 200
+  }
 });
 export default BuscaPorCep;

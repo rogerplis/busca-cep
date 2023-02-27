@@ -1,19 +1,22 @@
-import { View,  Text } from "react-native";
+import { View,  Text, StyleSheet } from "react-native";
 
 export default function ListaCep({item}) {
     return(
-      <View>
+      <View style={styles.container} >
       <Text>CEP: {item.cep}</Text>
       <Text>Logradouro: {item.logradouro}</Text>
       <Text>Complemento: {item.complemento}</Text>
       <Text>Bairro: {item.bairro}</Text>
       <Text>Localidade: {item.localidade}</Text>
-      <Text>UF: {item.uf}</Text>
-      <Text>IBGE: {item.ibge}</Text>
-      <Text>GIA: {item.gia}</Text>
-      <Text>DDD: {item.ddd}</Text>
-      <Text>SIAFI: {item.siafi}</Text>
+      <Text>UF: {item.uf}</Text>           
+      <Text>DDD: {item.ddd}</Text>      
       <Text> --------------------</Text>
     </View>
     )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginLeft:3,
+  }
+})

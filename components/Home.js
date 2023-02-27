@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
+
 import Button from "./Button";
 const logo = require('../assets/img/R.jpg') 
 const Home = () => {
@@ -13,13 +14,15 @@ const Home = () => {
       <Button
         theme={"primary"}
         label="Pesquisa por endereço"
-        onPress={() => navigation.navigate("BuscaPorEnder")}
+        onPress={() => navigation.navigate("BUSCA POR ENDEREÇO")}
       />
       <Button
         theme={"primary"}
         label="Pesquisa por CEP"
-        onPress={() => navigation.navigate("BuscaPorCep")}
+        onPress={() => navigation.navigate("BUSCA POR CEP")}
       />
+      
+      
     </View>
   );
 };
